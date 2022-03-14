@@ -54,20 +54,16 @@ final class RepositoriesSceneView: FlexView {
 extension RepositoriesSceneView: ListAdapterDataSource {
   func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
     return repositories
-      .map {
-        RepositoryCellViewModel(
-          id: $0.id,
-          name: $0.name,
-          description: $0.description,
-          starsCount: $0.starsCount,
-          forksCount: $0.forksCount
-        )
-      }
+      .map(ListDiffableBox.init(value:))
   }
 
   func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-    let viewModel = RepositorySectionViewModel(dependency: .init())
-    return RepositorySectionController(viewModel: .init(viewModel: viewModel))
+    // TODO: - Move to parent assembly?
+    guard let repository = (object as? ListDiffableBox<Repository>)?.value else {
+      fatalError("Unsupported object \(object)")
+    }
+    let section = RepositorySectionAssemblyDefault()
+    return section.assemble(repository: repository)
   }
 
   func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -82,7 +78,7 @@ extension Reactive where Base: RepositoriesSceneView {
 }
 
 extension Reactive where Base: RepositoriesSceneView {
-  var state: Binder<RepositoriesSceneViewModel.State> {
+  var state: Binder<RepositoriesSceneModel.State> {
     return Binder(self.base) { view, state in
       if let repositories = state.repositories.success {
         view.repositories = repositories

@@ -41,7 +41,7 @@ public final class RepositoryCell: FlexCollectionViewCell {
     return view
   }()
 
-  public func configure(_ viewModel: RepositoryCellViewModel) {
+  public func configure(_ viewModel: RepositoryCellModel) {
     nameLabel.text = viewModel.name
     descriptionLabel.text = viewModel.description
     updateStarsCount(viewModel.starsCount)

@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 final class RepositoriesSceneViewController: BaseViewController<RepositoriesSceneView> {
-  let viewModel: ViewModel<RepositoriesSceneViewModel>
+  let viewModel: ViewModel<RepositoriesSceneModel>
 
-  init(viewModel: ViewModel<RepositoriesSceneViewModel>) {
+  init(viewModel: ViewModel<RepositoriesSceneModel>) {
     self.viewModel = viewModel
     super.init()
   }

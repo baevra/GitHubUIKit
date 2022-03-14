@@ -19,7 +19,7 @@ public struct RepositoriesSceneAssemblyDefault: RepositoriesSceneAssembly {
         getRepositoriesQuery: getRepositoriesQuery
       )
     )
-    let viewModel = RepositoriesSceneViewModel(
+    let viewModel = RepositoriesSceneModel(
       dependency: .init(
         getRepositoriesUseCase: getRepositoriesUseCase
       )

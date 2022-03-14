@@ -1,5 +1,5 @@
 //
-//  RepositoriesSceneViewModel.swift
+//  RepositoriesSceneModel.swift
 //  GitHubUIKit
 //
 //  Created by Roman Baev on 05.03.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public final class RepositoriesSceneViewModel: ViewModelable {
+public final class RepositoriesSceneModel: ViewModelable {
   public var state: Observable<State> {
     return stateSubject.asObservable()
   }
@@ -72,7 +72,7 @@ public final class RepositoriesSceneViewModel: ViewModelable {
   }
 }
 
-public extension RepositoriesSceneViewModel {
+public extension RepositoriesSceneModel {
   struct State {
     fileprivate(set) var repositories: BaseState<[Repository], Never>
 
@@ -82,14 +82,14 @@ public extension RepositoriesSceneViewModel {
   }
 }
 
-public extension RepositoriesSceneViewModel {
+public extension RepositoriesSceneModel {
   enum Action {
     case appear
     case refresh
   }
 }
 
-public extension RepositoriesSceneViewModel {
+public extension RepositoriesSceneModel {
   struct Dependency {
     let getRepositoriesUseCase: GetRepositoriesUseCase
   }
