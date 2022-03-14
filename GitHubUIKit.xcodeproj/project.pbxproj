@@ -434,19 +434,19 @@
 		8AA180ED27D8BC6B008F4564 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8AA180EE27D8BC6B008F4564 /* Articles */,
+				8AA180EE27D8BC6B008F4564 /* Repositories */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		8AA180EE27D8BC6B008F4564 /* Articles */ = {
+		8AA180EE27D8BC6B008F4564 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				8AA180EF27D8BC6B008F4564 /* RepositoriesSceneViewModel.swift */,
 				8AA180F027D8BC6B008F4564 /* RepositoriesSceneViewController.swift */,
 				8AA180F127D8BC6B008F4564 /* RepositoriesSceneView.swift */,
 			);
-			path = Articles;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		8AA180F227D8BC6B008F4564 /* Assembly */ = {

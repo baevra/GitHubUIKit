@@ -1,6 +1,6 @@
 //
 //  GetRepositoriesUseCase.swift
-//  AltaiCoffeeUIKit
+//  GitHubUIKit
 //
 //  Created by Roman Baev on 05.03.2022.
 //
